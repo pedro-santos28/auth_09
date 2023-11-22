@@ -16,9 +16,7 @@
       <% flash.each do |type, msg| %>
         <div class="flash"><%= msg %></div>
       <% end %>
-      <%= link_to "Sign Up", sign_up_path %>
-      <%= link_to "Sign In", sign_in_path, id: "user-login" %>
-      <%= button_to "Sign Out", sign_out_path, method: :delete, id: "user-sign-out" %>
+      <%= render partial: "shared/navbar"%>
       <%= yield %>
     </main>
   </body>

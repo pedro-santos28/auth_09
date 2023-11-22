@@ -15,9 +15,18 @@
                       <%= f.password_field :password, class: "text-field", placeholder: "••••••••", id: "user-password" %>
                   </div>
                   <%= f.submit "Sign in", class: "submit", id: "user-login-submit" %>
-                  <p class="dimmed-text">
-                    Create an account? <a href="#" class="link">Sign up</a>
-                  </p>
+               
+                  <div>
+                    <p class="dimmed-text">
+                    </p>
+                    <p class="dimmed-text">
+                      Create an account?
+                      <%= link_to "Sign up", registration_path, id: "sign-up" %>
+                    </p>
+                    <p class="dimmed-text">
+                      <%= link_to "Forgot password", password_recover_path, id: "forgot-password"%>
+                    </p>
+                  </div>
               <% end %>
           </div>
       </div>
