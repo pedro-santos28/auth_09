@@ -14,17 +14,21 @@
                       <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                       <%= f.password_field :password, class: "text-field", placeholder: "••••••••", id: "user-password" %>
                   </div>
-                  <%= f.submit "Sign in", class: "submit", id: "user-login-submit" %>
-               
                   <div>
-                    <p class="dimmed-text">
-                    </p>
+
+                  <div class="w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg transform transition-transform motion-reduce:transform-none">
+                    <%= f.submit "Sign in", id: "user-login-submit" %>
+                  </div>
+
+               
+                  <div class="mt-4 flex flex-col gap-2">
+                 
                     <p class="dimmed-text">
                       Create an account?
-                      <%= link_to "Sign up", registration_path, id: "sign-up" %>
+                      <%= link_to "Sign up", registration_path, class: "text-blue-800 font-bold" ,id: "sign-up" %>
                     </p>
                     <p class="dimmed-text">
-                      <%= link_to "Forgot password", password_recover_path, id: "forgot-password"%>
+                      <%= link_to "Forgot password", password_recover_path, class: "text-blue-700 font-bold", id: "forgot-password"%>
                     </p>
                   </div>
               <% end %>

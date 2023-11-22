@@ -1,17 +1,28 @@
 class SessionsController < ApplicationController
-  def destroy
 
+  before_action :user, only: :create
+
+  def destroy
+  end
+
+  def new
   end
 
   def create
-    flash[:notice] = "Welcome #{user.email}"
-    redirect_to root_path
+    if @user
+      flash[:notice] = "Welcome #{user.email}"
+      redirect_to root_path
+    else
+      flash[:alert] = "Invalid credentials"
+      render :new, status: :unprocessable_entity
+    end
+
   end
 
   private
 
     def user
-      User.find_by(email: params[:email])
+      @user = User.find_by(email: params[:email])
         &.authenticate(params[:password])
     end
 end

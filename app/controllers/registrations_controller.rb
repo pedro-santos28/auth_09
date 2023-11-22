@@ -1,5 +1,4 @@
 class RegistrationsController < ApplicationController
-  layout "auth"
 
   def new
     @user = User.new
@@ -11,6 +10,9 @@ class RegistrationsController < ApplicationController
     if @user.save
       flash[:notice] = "Welcome #{@user.email}"
       redirect_to root_path
+    else
+      flash[:alert] = "Invalid information, try again"
+      render :new, status: :unprocessable_entity
     end
   end
 

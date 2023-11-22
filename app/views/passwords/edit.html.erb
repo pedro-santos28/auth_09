@@ -11,7 +11,9 @@
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                     <%= f.email_field :email, class: "text-field", placeholder: "name@company.com", id: "user-email" %>
                   </div>
-                  <%= f.submit "Send", class: "submit", id: "user-submit"%>
+                  <div class="w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg transform transition-transform motion-reduce:transform-none">
+                    <%= f.submit "Send", id: "user-submit"%>
+                  </div>
                   <p class="dimmed-text">
                     Already have an account? <a href="#" class="link">Log in</a>
                   </p>

@@ -16,7 +16,11 @@
                       <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password confirmation</label>
                       <%= f.password_field :password_confirmation, class: "text-field", placeholder: "••••••••", id: "user-password-confirmation" %>
                   </div>
-                  <%= f.submit :change, class: "submit", id: "update-password-submit"%>
+
+                  <div class="w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg transform transition-transform motion-reduce:transform-none">
+                    <%= f.submit :Save, id: "update-password-submit"%>
+                  </div>
+                  
                   <p class="dimmed-text">
                     Already have an account? <a href="#" class="link">Log in</a>
                   </p>

@@ -27,7 +27,7 @@ class PasswordsController < ApplicationController
     @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
-      flash[:alert] = "Your password has been updated"
+      flash[:notice] = "Your password has been updated"
       redirect_to root_path
     else
       flash[:alert] = "invalid passwords, try again"

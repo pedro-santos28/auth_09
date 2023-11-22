@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AuthFromScratch</title>
+    <title>Auth</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <main>
-      <% flash.each do |type, msg| %>
-        <div class="flash"><%= msg %></div>
-      <% end %>
       <%= render partial: "shared/navbar"%>
+      <%= render partial: "shared/flash"%>
       <%= yield %>
     </main>
   </body>
