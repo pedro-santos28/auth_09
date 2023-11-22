@@ -41,17 +41,3 @@ RSpec.describe "RecoverPasswords", type: :system do
     end
   end
 end
-
-# RSpec.describe PasswordRecoveryMailer, type: :mailer do
-#   describe "PasswordRecoveryMailer" do
-#     let(:mail) { PasswordRecoveryMailer.with(email: "phenrqlol@gmail.com").recover_password }
-
-#     it "renders the headers" do
-#       expect(mail.subject).to eq("Password recovery")
-#       expect(mail.from).to eq(["notifications@example.com"])
-#       expect(mail.body.encoded).to have_body_text(/#{new_password_url}/)
-#       # expect(ActionMailer::Base.deliveries.count).to eq(1)
-#     end
-
-#   end
-# end

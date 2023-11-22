@@ -2,8 +2,6 @@ class PasswordsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-    puts params[:email].inspect
-    puts "usuário encontrado: #{@user}"
     if @user
       PasswordRecoveryMailer.with(user: @user).recover_password.deliver_later
 
