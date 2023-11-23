@@ -12,12 +12,7 @@ RSpec.describe "RecoverPasswords", type: :system do
   end
 
   before do
-    @user = User.find_by(email: "pedro@gmail.com")
-    if @user.nil?
-      User.create(email: "pedro@gmail.com", password: "654321", password_confirmation: "654321").save
-      @user = User.find_by(email: "pedro@gmail.com")
-      puts "created user: #{@user.email}"
-    end
+    sign_up
   end
 
   describe "recover_password" do
@@ -36,8 +31,8 @@ RSpec.describe "RecoverPasswords", type: :system do
       visit_in_email("New password")
       expect(page).to have_text("Enter your new password")
 
-      fill_in "user-password", with: "123456"
-      fill_in "user-password-confirmation", with: "123456"
+      fill_in "user-password", with: "654321"
+      fill_in "user-password-confirmation", with: "654321"
       click_on "update-password-submit"
 
       expect(page).to have_text("Your password has been updated")

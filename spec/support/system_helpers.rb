@@ -7,17 +7,18 @@ module SystemHelpers
   def sign_up
     visit "/"
     click_on "sign-up"
-    fill_in "user-email", with: "jdoe@email.com"
-    fill_in "user-password", with: "secret123"
-    click_on "user-submit"
+    fill_in "user-email", with: "pedro@gmail.com"
+    fill_in "user-password", with: "654321"
+    click_on "user-sign-up-submit"
   end
 
   def sign_in
     visit "/"
-    click_on "sign-in"
-    fill_in "user-email", with: "pedro@gmail.com"
-    fill_in "user-password", with: "123456"
-    click_on "user-login-submit"
+      click_on "sign-in"
+      fill_in "user-email", with: "pedro@gmail.com"
+      fill_in "user-password", with: "654321"
+      click_on "user-login-submit"
+      expect(page).to have_content("Welcome pedro@gmail.com")
   end
 
   def sign_out
