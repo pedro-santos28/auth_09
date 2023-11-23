@@ -9,7 +9,15 @@ RSpec.describe "RecoverPasswords", type: :system do
 
   before do
     driven_by(:selenium, using: :firefox, screen_size: [1400, 1400])
+  end
 
+  before do
+    @user = User.find_by(email: "pedro@gmail.com")
+    if @user.nil?
+      User.create(email: "pedro@gmail.com", password: "654321", password_confirmation: "654321").save
+      @user = User.find_by(email: "pedro@gmail.com")
+      puts "created user: #{@user.email}"
+    end
   end
 
   describe "recover_password" do
